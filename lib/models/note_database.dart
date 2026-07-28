@@ -5,7 +5,7 @@ import 'package:path_provider/path_provider.dart';
 class NoteDatabase {
   static late Isar isar;
 
-//initialize db
+  //initialize db
   static Future<void> init() async {
     final dir = await getApplicationDocumentsDirectory();
     isar = await Isar.open(
@@ -14,21 +14,38 @@ class NoteDatabase {
       );
   }
 
-//list of notes
-final List<Note> currentNotes = [];
+  //list of notes
+  final List<Note> currentNotes = [];
 
-//create - note and save to db
-Future<void> addNote(String textFromUser) async {
-  final newNote = Note()
-    ..text = textFromUser;
-  await isar.writeTxn(() => isar.notes.put(newNote));
+  //create - note and save to db
+  Future<void> addNote(String textFromUser) async {
+    final newNote = Note()
+      ..text = textFromUser;
+    await isar.writeTxn(() => isar.notes.put(newNote));
 
-  fetchNotes();
-}
+    fetchNotes();
+  }
 
-//read - notes from db
+  //read - notes from db
+  Future<void> fetchNotes() async {
+    List<Note> fetchedNotes = await isar.notes.where().findAll();
+    currentNotes.clear();
+    currentNotes.addAll(fetchedNotes);
+  }
 
-//update - a note from db
+  //update - a note from db
+  Future<void> updateNote(int id, String newText) async {
+    final existingNote = await isar.notes.get(id);
+    if (existingNote != null) {
+      existingNote.text = newText;
+      await isar.writeTxn(() => isar.notes.put(existingNote));
+      await fetchNotes();
+    }
+  }
 
-//delete - note from db
+  //delete - note from db
+  Future<void> deleteNote(int id) async {
+    await isar.writeTxn(() => isar.notes.delete(id));
+    await fetchNotes();
+  }
 }
