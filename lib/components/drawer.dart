@@ -10,19 +10,19 @@ class myDrawer extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       child: Column(
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             child: Icon(Icons.note),
           ),
 
           DrawerTile(
             title: "Notes",
-            leading: Icon(Icons.home),
-            onTap: () {},
+            leading: const Icon(Icons.home),
+            onTap: () => Navigator.pop(context),
           ),
 
           DrawerTile(
             title: "Settings",
-            leading: Icon(Icons.settings),
+            leading: const Icon(Icons.settings),
             onTap: () {},
           ),
 

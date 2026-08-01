@@ -14,10 +14,16 @@ class DrawerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: leading,
-      title: Text(title),
-      onTap: onTap,
+    return Padding(
+      padding: const EdgeInsets.only(left: 25.0),
+      child: ListTile(
+        leading: leading,
+        title: Text(
+          title,
+          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+        ),
+        onTap: onTap,
+      ),
     );
   }
 }
