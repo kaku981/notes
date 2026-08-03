@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes/components/drawer_tile.dart';
+import 'package:notes/pages/settings_page.dart';
 
 class myDrawer extends StatelessWidget {
   const myDrawer({super.key});
@@ -23,7 +24,15 @@ class myDrawer extends StatelessWidget {
           DrawerTile(
             title: "Settings",
             leading: const Icon(Icons.settings),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => SettingsPage(),
+                ),
+              );
+            },
           ),
 
         ],
