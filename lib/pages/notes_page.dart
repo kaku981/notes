@@ -94,7 +94,7 @@ class _NotesPageState extends State<NotesPage> {
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
 
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       floatingActionButton: FloatingActionButton(
         onPressed: createNote,
         child: const Icon(Icons.add),
