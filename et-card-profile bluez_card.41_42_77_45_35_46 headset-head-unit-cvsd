@@ -1,0 +1,48 @@
+[0;1;32m●[0m pipewire.service - PipeWire Multimedia Service
+     Loaded: loaded (]8;;file://lucille/usr/lib/systemd/user/pipewire.service\/usr/lib/systemd/user/pipewire.service]8;;\; [0;1;38:5:185mdisabled[0m; preset: [0;1;38:5:185mdisabled[0m)
+    Drop-In: /usr/lib/systemd/user/pipewire.service.d
+             └─]8;;file://lucille/usr/lib/systemd/user/pipewire.service.d/00-uresourced.conf\00-uresourced.conf]8;;\
+             /usr/lib/systemd/user/service.d
+             └─]8;;file://lucille/usr/lib/systemd/user/service.d/10-timeout-abort.conf\10-timeout-abort.conf]8;;\
+     Active: [0;1;32mactive (running)[0m since Wed 2026-08-05 20:59:17 PST; 32min ago
+ Invocation: d3623c77921c42e4a1c5d6817d9a4702
+TriggeredBy: [0;1;32m●[0m pipewire.socket
+   Main PID: 2510 (pipewire)
+      Tasks: 3[0;38:5:245m (limit: 18953)[0m
+     Memory: 18.2M (peak: 71.5M)
+        CPU: 4.014s
+     CGroup: /user.slice/user-1000.slice/user@1000.service/session.slice/pipewire.service
+             └─[0;38:5:245m2510 /usr/bin/pipewire[0m
+
+Aug 05 20:59:17 lucille systemd[2332]: Started pipewire.service - PipeWire Multimedia Service.
+Aug 05 20:59:17 lucille pipewire[2510]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mmod.raop-sink: sess.latency.msec 250.000000 should be an integer multiple of rtp.ptime 7.981859[0m
+Aug 05 21:01:32 lucille pipewire[2510]: [0;1;31m[0;1;39m[0;1;31mpw.node: (bluez_input.41_42_77_45_35_46.0-77) running -> error (Received error event)[0m
+Aug 05 21:01:32 lucille pipewire[2510]: [0;1;31m[0;1;39m[0;1;31mpw.node: (bluez_output.41_42_77_45_35_46.1-85) suspended -> error (Received error event)[0m
+Aug 05 21:01:32 lucille pipewire[2510]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mpw.link: 0x56271e6e2600: one of the nodes is in error out:suspended in:error[0m
+Aug 05 21:01:32 lucille pipewire[2510]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mpw.link: 0x56271e6d30e0: one of the nodes is in error out:suspended in:error[0m
+Aug 05 21:01:33 lucille pipewire[2510]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mpw.link: 0x56271e6af6b0: one of the nodes is in error out:suspended in:error[0m
+Aug 05 21:02:03 lucille pipewire[2510]: [0;1;31m[0;1;39m[0;1;31mpw.node: (bluez_output.41_42_77_45_35_46.1-85) running -> error (error changing node state: Bad address)[0m
+
+[0;1;32m●[0m wireplumber.service - Multimedia Service Session Manager
+     Loaded: loaded (]8;;file://lucille/usr/lib/systemd/user/wireplumber.service\/usr/lib/systemd/user/wireplumber.service]8;;\; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+    Drop-In: /usr/lib/systemd/user/service.d
+             └─]8;;file://lucille/usr/lib/systemd/user/service.d/10-timeout-abort.conf\10-timeout-abort.conf]8;;\
+     Active: [0;1;32mactive (running)[0m since Wed 2026-08-05 20:59:17 PST; 32min ago
+ Invocation: 52007f1f1ebf4531be8b661e7c31699e
+   Main PID: 2511 (wireplumber)
+      Tasks: 9[0;38:5:245m (limit: 18953)[0m
+     Memory: 12.4M (peak: 16.2M)
+        CPU: 41.439s
+     CGroup: /user.slice/user-1000.slice/user@1000.service/session.slice/wireplumber.service
+             └─[0;38:5:245m2511 /usr/bin/wireplumber[0m
+
+Aug 05 21:29:33 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mpw.node: (bluez_input.41_42_77_45_35_46.0-114) suspended -> error (Start error: Operation not permitted)[0m
+Aug 05 21:29:33 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mspa.bluez5.native: connect(): Connection refused[0m
+Aug 05 21:29:33 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mspa.audioadapter: 0x55c926d39748: can't send command 2: Operation not permitted[0m
+Aug 05 21:29:33 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mpw.node: (bluez_output.41_42_77_45_35_46.1-171) suspended -> error (Start error: Operation not permitted)[0m
+Aug 05 21:30:16 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mspa.bluez5.native: connect(): Connection refused[0m
+Aug 05 21:30:16 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mspa.audioadapter: 0x55c926d39748: can't send command 2: Operation not permitted[0m
+Aug 05 21:30:16 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mpw.node: (bluez_input.41_42_77_45_35_46.0-171) suspended -> error (Start error: Operation not permitted)[0m
+Aug 05 21:30:16 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mspa.bluez5.native: connect(): Connection refused[0m
+Aug 05 21:30:16 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mspa.audioadapter: 0x55c92726bf38: can't send command 2: Operation not permitted[0m
+Aug 05 21:30:16 lucille wireplumber[2511]: [0;1;38:5:185m[0;1;39m[0;1;38:5:185mpw.node: (bluez_output.41_42_77_45_35_46.1-114) suspended -> error (Start error: Operation not permitted)[0m

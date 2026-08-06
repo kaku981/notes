@@ -29,7 +29,7 @@ class _NotesPageState extends State<NotesPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         content: TextField(
           controller: textController,
         ),
@@ -60,7 +60,7 @@ class _NotesPageState extends State<NotesPage> {
     showDialog(
       context: context, 
       builder: (context) => AlertDialog(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         title: const Text("Update Note"),
         content: TextField(controller: textController),
         actions: [
